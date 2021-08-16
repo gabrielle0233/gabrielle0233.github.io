@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>(test)</title>
+      <link href="/2021/08/15/test-1/"/>
+      <url>/2021/08/15/test-1/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://res.cloudinary.com/di22igym7/image/upload/q_100,r_30/a_0/v1629014848/samples/1611925196842_var9dt.jpg" alt="win11bg"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Bad Bunny and Aventura Share Video for New Song “Volví” (test ^-^)</title>
+      <link href="/2021/08/14/test/"/>
+      <url>/2021/08/14/test/</url>
+      
+        <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="530" height="86" src="//music.163.com/outchain/player?type=2&id=1866152850&auto=0&height=66"></iframe><blockquote><p>Youtube 🔗</p></blockquote><iframe width="560" height="315" src="https://www.youtube.com/embed/ayd3yWr4tqU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p>Bad Bunny和 Aventura 合作的新曲 Volví 发布。这首歌区分了 Bad Bunny 带有陷阱色彩的 reggaetón 和 Aventura 独特的 bachata 吉他风格之间的差异。</p><p>Aventura 曾经可以说是最受欢迎的多米尼加男孩乐队成员，于 2011 年首次离队，成员们开始追求独唱事业；Romeo Santos 从此被称为“King of Bachata”。该乐队在过去十年中多次重聚，并计划在 2020 年巡演，但因冠状病毒大流行而推迟。</p><p>Bad Bunny 在 2020 年发行了三张个人 LPs，首次凭借西班牙语专辑在 Billboard 的专辑榜上获得第一名。他在2021年发布了多首歌曲，包括 100 Millones 、 Yonaguni 和 De Museo。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>gabrielle的第一个博客</title>
+      <link href="/2021/08/13/dkhz%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2021/08/13/dkhz%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<hr><h1 id="いち"><a href="#いち" class="headerlink" title="いち"></a>いち</h1><h2 id="に"><a href="#に" class="headerlink" title="に"></a>に</h2><h3 id="さん"><a href="#さん" class="headerlink" title="さん"></a>さん</h3><h4 id="よん"><a href="#よん" class="headerlink" title="よん"></a>よん</h4><h5 id="ご"><a href="#ご" class="headerlink" title="ご"></a>ご</h5><p><strong>好粗</strong></p><p><em>躺</em></p><p><del>一穿三</del></p><blockquote><p>引用</p></blockquote><hr><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># node</span></span><br><span class="line"><span class="comment"># git</span></span><br><span class="line">cnpm install -g hexo-cli    <span class="comment"># 安装hexo框架</span></span><br><span class="line">hexo -v<span class="comment"># 查看hexo版本</span></span><br><span class="line">mkdir blog<span class="comment"># 创建blog目录</span></span><br><span class="line"><span class="built_in">cd</span> blog <span class="comment"># 进入blog目录</span></span><br><span class="line">sudo hexo init <span class="comment"># 初始化</span></span><br><span class="line">hexo s<span class="comment"># 启动本地博客服务</span></span><br><span class="line">http://localhost:4000/<span class="comment"># 本地访问地址</span></span><br><span class="line">hexo n dkhz的第一个博客 <span class="comment"># 创建新的文章 </span></span><br><span class="line"><span class="comment"># 返回blog目录</span></span><br><span class="line">hexo clean <span class="comment"># 清理</span></span><br><span class="line">hexo g <span class="comment"># 生成</span></span><br><span class="line"><span class="comment"># Github创建一个新的仓库 gabrielle0233.github.io</span></span><br><span class="line">npm install --save hexo-deployer-git <span class="comment"># 在blog目录下安装git部署插件</span></span><br><span class="line"><span class="comment"># 配置_config.yml </span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line"> repo: https://github.com/gabrielle0233/gabrielle0233.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">hexo d<span class="comment"># 部署到Github仓库</span></span><br><span class="line">https://gabrielle0233.github.io/  <span class="comment"># 访问这个地址可以查看博客</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-XXXX.git themes/XXXX  <span class="comment"># 下载主题到本地</span></span><br><span class="line"><span class="comment"># 修改hexo根目录下的 _config.yml 文件 ： theme: XXXX</span></span><br><span class="line">hexo c<span class="comment"># 清理</span></span><br><span class="line">hexo g<span class="comment"># 生成</span></span><br><span class="line">hexo d<span class="comment"># 部署到远程Github仓库</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># https://gabrielle0233.github.io/</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2021/08/13/hello-world/"/>
+      <url>/2021/08/13/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
