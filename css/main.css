@@ -221,7 +221,7 @@ h6 {
   padding: 0;
   font-weight: bold;
   line-height: 1.5;
-  font-family: "PingFang SC", "Microsoft YaHei", 'Lato', sans-serif;
+  font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", 'Lato', sans-serif;
 }
 h2,
 h3,
@@ -1206,7 +1206,7 @@ pre .javascript .function {
   opacity: 0;
 }
 .post-body {
-  font-family: "PingFang SC", "Microsoft YaHei", 'Lato', sans-serif;
+  font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", 'Lato', sans-serif;
 }
 @media (max-width: 991px) {
   .post-body {
@@ -1497,7 +1497,7 @@ pre .javascript .function {
 .posts-expand .post-meta {
   margin: 3px 0 60px 0;
   color: #999;
-  font-family: "PingFang SC", "Microsoft YaHei", 'Lato', sans-serif;
+  font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", 'Lato', sans-serif;
   font-size: 12px;
   text-align: center;
 }
@@ -1948,7 +1948,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #5d8a5c;
+  background: #ff3dbd;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3349,7 +3349,7 @@ a {
   text-shadow: 0 1px 1px #47456d;
   margin-bottom: 130px;
   z-index: 1;
-  font-family: 'Candyshop';
+  font-family: 'Pacifico';
   display: block;
 }
 @media (max-width: 991px) {
