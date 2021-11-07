@@ -194,7 +194,6 @@
 
 
 
-
   <title>Hi,gabrielle</title>
   
 <script>
@@ -562,6 +561,498 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-date">
+			<div class="post-month">11月</div>
+			<div class="post-day">07</div>
+	</div>
+  
+
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/07/Chart/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/DIYgod-avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi,gabrielle">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link scaleup" href="/2021/11/07/Chart/" itemprop="url">Chart</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-11-07T19:28:43+08:00">2021-11-07</time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">•</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="far fa-file-word"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article</span>
+                
+                <span title="Words count in article"></span>
+              
+
+              
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2021/11/07/Chart/" class="leancloud_visitors" data-flag-title="Chart">
+               <span class="post-meta-divider">•</span>
+               <span class="post-meta-item-icon">
+                 <i class="far fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">被</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span class="post-meta-item-text">人看爆</span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      
+      
+      
+
+      
+        
+          
+            <div id="echarts3720" style="width: 90%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/4.3.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+	// 基于准备好的dom，初始化echarts实例
+	var myChart = echarts.init(document.getElementById('echarts3720'));
+	// 指定图表的配置项和数据
+	option = {
+  xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [120, 200, 150, 80, 70, 110, 130],
+      type: 'bar',
+      showBackground: true,
+      backgroundStyle: {
+        color: 'rgba(180, 180, 180, 0.2)'
+      }
+    }
+  ]
+};
+	// 使用刚指定的配置项和数据显示图表。
+	myChart.setOption(option);
+</script>
+
+
+
+
+<div id="echarts2940" style="width: 90%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/4.3.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+	// 基于准备好的dom，初始化echarts实例
+	var myChart = echarts.init(document.getElementById('echarts2940'));
+	// 指定图表的配置项和数据
+	const upColor = '#00da3c';
+const downColor = '#ec0000';
+function splitData(rawData) {
+  let categoryData = [];
+  let values = [];
+  let volumes = [];
+  for (let i = 0; i < rawData.length; i++) {
+    categoryData.push(rawData[i].splice(0, 1)[0]);
+    values.push(rawData[i]);
+    volumes.push([i, rawData[i][4], rawData[i][0] > rawData[i][1] ? 1 : -1]);
+  }
+  return {
+    categoryData: categoryData,
+    values: values,
+    volumes: volumes
+  };
+}
+function calculateMA(dayCount, data) {
+  var result = [];
+  for (var i = 0, len = data.values.length; i < len; i++) {
+    if (i < dayCount) {
+      result.push('-');
+      continue;
+    }
+    var sum = 0;
+    for (var j = 0; j < dayCount; j++) {
+      sum += data.values[i - j][1];
+    }
+    result.push(+(sum / dayCount).toFixed(3));
+  }
+  return result;
+}
+$.get(ROOT_PATH + '/data/asset/data/stock-DJI.json', function (rawData) {
+  var data = splitData(rawData);
+  myChart.setOption(
+    (option = {
+      animation: false,
+      legend: {
+        bottom: 10,
+        left: 'center',
+        data: ['Dow-Jones index', 'MA5', 'MA10', 'MA20', 'MA30']
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross'
+        },
+        borderWidth: 1,
+        borderColor: '#ccc',
+        padding: 10,
+        textStyle: {
+          color: '#000'
+        },
+        position: function (pos, params, el, elRect, size) {
+          const obj = {
+            top: 10
+          };
+          obj[['left', 'right'][+(pos[0] < size.viewSize[0] / 2)]] = 30;
+          return obj;
+        }
+        // extraCssText: 'width: 170px'
+      },
+      axisPointer: {
+        link: [
+          {
+            xAxisIndex: 'all'
+          }
+        ],
+        label: {
+          backgroundColor: '#777'
+        }
+      },
+      toolbox: {
+        feature: {
+          dataZoom: {
+            yAxisIndex: false
+          },
+          brush: {
+            type: ['lineX', 'clear']
+          }
+        }
+      },
+      brush: {
+        xAxisIndex: 'all',
+        brushLink: 'all',
+        outOfBrush: {
+          colorAlpha: 0.1
+        }
+      },
+      visualMap: {
+        show: false,
+        seriesIndex: 5,
+        dimension: 2,
+        pieces: [
+          {
+            value: 1,
+            color: downColor
+          },
+          {
+            value: -1,
+            color: upColor
+          }
+        ]
+      },
+      grid: [
+        {
+          left: '10%',
+          right: '8%',
+          height: '50%'
+        },
+        {
+          left: '10%',
+          right: '8%',
+          top: '63%',
+          height: '16%'
+        }
+      ],
+      xAxis: [
+        {
+          type: 'category',
+          data: data.categoryData,
+          scale: true,
+          boundaryGap: false,
+          axisLine: { onZero: false },
+          splitLine: { show: false },
+          min: 'dataMin',
+          max: 'dataMax',
+          axisPointer: {
+            z: 100
+          }
+        },
+        {
+          type: 'category',
+          gridIndex: 1,
+          data: data.categoryData,
+          scale: true,
+          boundaryGap: false,
+          axisLine: { onZero: false },
+          axisTick: { show: false },
+          splitLine: { show: false },
+          axisLabel: { show: false },
+          min: 'dataMin',
+          max: 'dataMax'
+        }
+      ],
+      yAxis: [
+        {
+          scale: true,
+          splitArea: {
+            show: true
+          }
+        },
+        {
+          scale: true,
+          gridIndex: 1,
+          splitNumber: 2,
+          axisLabel: { show: false },
+          axisLine: { show: false },
+          axisTick: { show: false },
+          splitLine: { show: false }
+        }
+      ],
+      dataZoom: [
+        {
+          type: 'inside',
+          xAxisIndex: [0, 1],
+          start: 98,
+          end: 100
+        },
+        {
+          show: true,
+          xAxisIndex: [0, 1],
+          type: 'slider',
+          top: '85%',
+          start: 98,
+          end: 100
+        }
+      ],
+      series: [
+        {
+          name: 'Dow-Jones index',
+          type: 'candlestick',
+          data: data.values,
+          itemStyle: {
+            color: upColor,
+            color0: downColor,
+            borderColor: undefined,
+            borderColor0: undefined
+          },
+          tooltip: {
+            formatter: function (param) {
+              param = param[0];
+              return [
+                'Date: ' + param.name + '<hr size=1 style="margin: 3px 0">',
+                'Open: ' + param.data[0] + '<br/>',
+                'Close: ' + param.data[1] + '<br/>',
+                'Lowest: ' + param.data[2] + '<br/>',
+                'Highest: ' + param.data[3] + '<br/>'
+              ].join('');
+            }
+          }
+        },
+        {
+          name: 'MA5',
+          type: 'line',
+          data: calculateMA(5, data),
+          smooth: true,
+          lineStyle: {
+            opacity: 0.5
+          }
+        },
+        {
+          name: 'MA10',
+          type: 'line',
+          data: calculateMA(10, data),
+          smooth: true,
+          lineStyle: {
+            opacity: 0.5
+          }
+        },
+        {
+          name: 'MA20',
+          type: 'line',
+          data: calculateMA(20, data),
+          smooth: true,
+          lineStyle: {
+            opacity: 0.5
+          }
+        },
+        {
+          name: 'MA30',
+          type: 'line',
+          data: calculateMA(30, data),
+          smooth: true,
+          lineStyle: {
+            opacity: 0.5
+          }
+        },
+        {
+          name: 'Volume',
+          type: 'bar',
+          xAxisIndex: 1,
+          yAxisIndex: 1,
+          data: data.volumes
+        }
+      ]
+    }),
+    true
+  );
+  myChart.dispatchAction({
+    type: 'brush',
+    areas: [
+      {
+        brushType: 'lineX',
+        coordRange: ['2016-06-02', '2016-06-20'],
+        xAxisIndex: 0
+      }
+    ]
+  });
+});
+	// 使用刚指定的配置项和数据显示图表。
+	myChart.setOption(option);
+</script>
+
+
+
+<div id="echarts5440" style="width: 90%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/4.3.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+	// 基于准备好的dom，初始化echarts实例
+	var myChart = echarts.init(document.getElementById('echarts5440'));
+	// 指定图表的配置项和数据
+	option = {
+  backgroundColor: '#000',
+  globe: {
+    baseTexture: ROOT_PATH + '/data-gl/asset/world.topo.bathy.200401.jpg',
+    heightTexture: ROOT_PATH + '/data-gl/asset/world.topo.bathy.200401.jpg',
+    displacementScale: 0.04,
+    shading: 'realistic',
+    environment: ROOT_PATH + '/data-gl/asset/starfield.jpg',
+    realisticMaterial: {
+      roughness: 0.9
+    },
+    postEffect: {
+      enable: true
+    },
+    light: {
+      main: {
+        intensity: 5,
+        shadow: true
+      },
+      ambientCubemap: {
+        texture: ROOT_PATH + '/data-gl/asset/pisa.hdr',
+        diffuseIntensity: 0.2
+      }
+    }
+  }
+};
+	// 使用刚指定的配置项和数据显示图表。
+	myChart.setOption(option);
+</script>
+            <div class="post-button text-center">
+              <a class="btn scaleup" href="/2021/11/07/Chart/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1920,160 +2411,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn scaleup" href="/2021/08/16/%E9%98%BF%E5%AF%8C%E6%B1%97%E5%B1%80%E5%8A%BF%EF%BC%9A%E5%A1%94%E5%88%A9%E7%8F%AD%E5%8D%A0%E9%A2%86%E6%80%BB%E7%BB%9F%E5%BA%9C-%E5%96%80%E5%B8%83%E5%B0%94%E9%99%B7%E8%90%BD/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-date">
-			<div class="post-month">08月</div>
-			<div class="post-day">15</div>
-	</div>
-  
-
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/15/test%E5%9B%BE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/DIYgod-avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi,gabrielle">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link scaleup" href="/2021/08/15/test%E5%9B%BE/" itemprop="url">(test)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-08-15T15:18:36+08:00">2021-08-15</time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">•</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="far fa-file-word"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article</span>
-                
-                <span title="Words count in article"></span>
-              
-
-              
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2021/08/15/test%E5%9B%BE/" class="leancloud_visitors" data-flag-title="(test)">
-               <span class="post-meta-divider">•</span>
-               <span class="post-meta-item-icon">
-                 <i class="far fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">被</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span class="post-meta-item-text">人看爆</span>
-             </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-      
-      
-      
-
-      
-        
-          <p><picture><source srcset="https://res.cloudinary.com/di22igym7/image/upload/q_100,r_30/a_0/v1629014848/samples/1611925196842_var9dt.webp" type="image/webp"><img loading="lazy" src="https://res.cloudinary.com/di22igym7/image/upload/q_100,r_30/a_0/v1629014848/samples/1611925196842_var9dt.jpg" alt="win11bg"></picture></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn scaleup" href="/2021/08/15/test%E5%9B%BE/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
