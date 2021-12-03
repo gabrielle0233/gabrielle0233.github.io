@@ -1948,7 +1948,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fee3ff;
+  background: #ff0fff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -5596,6 +5596,62 @@ a {
 }
 .theme-darling .posts-collapse .post:before {
   display: none;
+}
+body {
+  padding: 30px 0;
+  position: relative;
+}
+.my_gallery {
+  width: 600px;
+  margin: auto;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.my_imgc {
+  width: 200px;
+  height: 200px;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+.my_imgw {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform ease-in-out 300ms;
+}
+.my_imgw img {
+  display: none;
+}
+.my_imgc {
+  transition: width ease 400ms, height ease 350ms, left cubic-bezier(0.4, 0, 0.2, 1) 420ms, top cubic-bezier(0.4, 0, 0.2, 1) 420ms;
+}
+.my_imgc:hover .my_imgw {
+  -webkit-transform: scale(1.08);
+  -moz-transform: scale(1.08);
+  -ms-transform: scale(1.08);
+  -o-transform: scale(1.08);
+  transform: scale(1.08);
+  transition: transform cubic-bezier(0.4, 0, 0.2, 1) 450ms;
+}
+.my_imgc.active {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute;
+  z-index: 2;
+}
+.my_imgc.postactive {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+.my_imgc.active.positioned {
+  left: 0 !important;
+  top: 0 !important;
+  transition-delay: 50ms;
 }
 /* Make clicks pass-through */
 #nprogress {
